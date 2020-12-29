@@ -176,3 +176,72 @@ ps：优先使用对象组合而不是类继承，所以我们减少了对继承
 - 一组对象以定义良好但复杂的方式进行通信，产生的相互依赖关系结构混乱且难以理解
 - 一个对象引用其他很多对象并且直接与这些对象通信，导致难以复用该对象
 - 常被用来协调相关的GUI组件
+
+## 第十六章 SINGLETON模式
+
+### SINGLETON模式
+
+单例模式：保证一个类只有一个实例，并提供一个访问该实例的全局节点
+
+#### 结构
+
+![image-20201229111332511](assets/image-20201229111332511.png)
+
+```java
+// 恶汉
+private static final Singleton singleton = new Singleton();
+
+private Singleton() {
+}
+
+public static Singleton getInstance() {
+    return singleton;
+}
+```
+
+```java
+// 懒汉双检索
+private static volatile DoubleCheck doubleCheck;
+
+private DoubleCheck() {
+
+}
+
+public static DoubleCheck getInstance() {
+    if (doubleCheck == null) {
+        synchronized (DoubleCheck.class) {
+            if (doubleCheck == null) {
+                doubleCheck = new DoubleCheck();
+            }
+        }
+    }
+    return doubleCheck;
+}
+```
+
+```java
+// 枚举单例
+public enum EnumSingleton {
+    INSTANCE
+}
+```
+
+```java
+// 静态内部类
+private static class Singleton {
+    private static final InnerSingleton INSTANCE = new InnerSingleton();
+}
+
+private InnerSingleton() {
+
+}
+
+public static InnerSingleton getInstance() {
+    return Singleton.INSTANCE;
+}
+```
+
+#### 适用性
+
+- 当一个类只有一个实例且客户可以从一个总所周知的访问点访问时
+
