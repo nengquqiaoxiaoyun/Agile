@@ -279,3 +279,7 @@ public static InnerSingleton getInstance() {
 
 ![image-20201229150108386](assets/image-20201229150108386.png)
 
+### 支付薪水时间表
+
+![image-20201229151328376](assets/image-20201229151328376.png)
+
