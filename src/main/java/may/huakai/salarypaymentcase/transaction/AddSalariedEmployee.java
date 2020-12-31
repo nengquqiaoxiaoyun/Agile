@@ -1,4 +1,4 @@
-package may.huakai.salarypaymentcase;
+package may.huakai.salarypaymentcase.transaction;
 
 import may.huakai.salarypaymentcase.paymentclafic.PaymentClassification;
 import may.huakai.salarypaymentcase.paymentclafic.SalariedClassification;
@@ -22,18 +22,18 @@ public class AddSalariedEmployee extends AddEmployeeTransaction {
      */
     private BigDecimal salary;
 
-    void addEmployeeTransaction(int empid, String name, String address, BigDecimal salary) {
-        super.addEmployeeTransaction(empid, name, address);
+    public AddSalariedEmployee(int empid, String name, String address, BigDecimal salary) {
+        super(empid, name, address);
         this.salary = salary;
     }
 
     @Override
-    PaymentClassification getClassification() {
+    public PaymentClassification getClassification() {
         return new SalariedClassification(salary);
     }
 
     @Override
-    PaymentSchedule getSchedule() {
+    public PaymentSchedule getSchedule() {
         return new MothlySchedule();
     }
 }

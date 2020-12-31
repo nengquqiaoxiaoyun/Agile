@@ -1,5 +1,7 @@
 package may.huakai.salarypaymentcase.paymentclafic;
 
+import may.huakai.salarypaymentcase.SalesReceipt;
+
 import java.math.BigDecimal;
 
 /**
@@ -8,14 +10,15 @@ import java.math.BigDecimal;
  */
 public class SalariedClassification implements PaymentClassification {
 
+
     private BigDecimal salary;
 
     public SalariedClassification() {
-
     }
 
     public SalariedClassification(BigDecimal salary) {
         this.salary = salary;
     }
+
 
 }

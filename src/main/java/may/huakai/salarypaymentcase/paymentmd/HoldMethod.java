@@ -1,4 +1,4 @@
-package may.huakai.salarypaymentcase;
+package may.huakai.salarypaymentcase.paymentmd;
 
 import may.huakai.salarypaymentcase.paymentmd.PaymentMethod;
 

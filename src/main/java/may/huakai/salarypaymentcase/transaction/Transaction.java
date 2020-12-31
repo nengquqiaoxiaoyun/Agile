@@ -1,4 +1,4 @@
-package may.huakai.salarypaymentcase;
+package may.huakai.salarypaymentcase.transaction;
 
 /**
  * 操作
@@ -7,5 +7,5 @@ package may.huakai.salarypaymentcase;
  */
 public abstract class Transaction {
 
-    abstract void execute();
+    public abstract void execute();
 }
